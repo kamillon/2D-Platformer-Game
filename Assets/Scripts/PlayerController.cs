@@ -8,48 +8,62 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     private Rigidbody2D rb;
     private Animator anim;
-    private bool grounded;
+    private BoxCollider2D boxCollider;
+    [SerializeField]
+    private LayerMask groundLayer;
+    public float jumpForce = 8f;
+    private bool facingRight = true;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        //rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
-        rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
+        horizontalInput = Input.GetAxisRaw("Horizontal");
 
-        if (horizontalInput > 0.01f)
+        if(facingRight == false && horizontalInput > 0)
         {
-            transform.localScale = Vector3.one;
+            Flip();
         }
-        else if (horizontalInput < -0.01f)
+        else if(facingRight == true && horizontalInput < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            Flip();
         }
 
-
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        if (Input.GetKeyDown(KeyCode.Space) && checkGrounded())
             Jump();
 
         anim.SetBool("walk", horizontalInput != 0);
-        anim.SetBool("grounded", grounded);
+        anim.SetBool("grounded", checkGrounded());
     }
 
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
+    }
     private void Jump()
     {
-        rb.velocity = new Vector2(rb.velocity.x, speed);
-        grounded = false;
+        rb.AddForce(new Vector2(rb.velocity.x, jumpForce), ForceMode2D.Impulse);
+        anim.SetTrigger("jump");
+
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Flip()
     {
-        if (collision.gameObject.tag == "Ground")
-        {
-            grounded = true;
-        }
+        facingRight = !facingRight;
+        Vector3 Scaler = transform.localScale;
+        Scaler.x *= -1;
+        transform.localScale = Scaler;
+    }
+
+
+    private bool checkGrounded()
+    {
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
+        return raycastHit.collider != null;
     }
 }

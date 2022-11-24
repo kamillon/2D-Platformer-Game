@@ -20,11 +20,17 @@ public class PlayerLife : MonoBehaviour
         {
             Die();
         }
+
+        if (collision.gameObject.CompareTag("KillZone"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     private void Die()
     {
-        rb.bodyType = RigidbodyType2D.Static;
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<PlayerController>().enabled = false;
         anim.SetTrigger("death");  
     }
 
