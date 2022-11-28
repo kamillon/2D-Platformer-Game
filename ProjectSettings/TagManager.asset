@@ -22,8 +22,8 @@ TagManager:
   - Foreground
   - Background
   - Wall
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 
@@ -45,15 +45,18 @@ TagManager:
   - name: Background
     uniqueID: 4042623535
     locked: 0
-  - name: Wall
-    uniqueID: 1365196121
-    locked: 0
-  - name: Terrain
-    uniqueID: 3878277415
-    locked: 0
   - name: Foreground
     uniqueID: 2231706659
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Wall
+    uniqueID: 1365196121
+    locked: 0
+  - name: Ground
+    uniqueID: 1939384201
+    locked: 0
+  - name: Terrain
+    uniqueID: 3878277415
     locked: 0

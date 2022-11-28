@@ -14,18 +14,50 @@ public class PlayerLife : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Trap"))
+    //    {
+    //        Die();
+    //    }
+
+    //    if (collision.gameObject.CompareTag("KillZone"))
+    //    {
+    //        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    //    }
+    //}
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Trap"))
         {
-            Die();
+            HealthManager.health--;
+            if(HealthManager.health <= 0)
+            {
+                Die();
+            }
+            else
+            {
+                StartCoroutine(GetHurt());
+            }
         }
+
 
         if (collision.gameObject.CompareTag("KillZone"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
+
+    IEnumerator GetHurt()
+    {
+        Physics2D.IgnoreLayerCollision(13,14);
+        GetComponent<Animator>().SetLayerWeight(1, 1);
+        yield return new WaitForSeconds(2);
+        GetComponent<Animator>().SetLayerWeight(1, 0);
+        Physics2D.IgnoreLayerCollision(13,14, false);
+    }
+
 
     private void Die()
     {

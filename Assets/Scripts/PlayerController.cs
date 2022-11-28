@@ -24,15 +24,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
-
-        if(facingRight == false && horizontalInput > 0)
-        {
-            Flip();
-        }
-        else if(facingRight == true && horizontalInput < 0)
-        {
-            Flip();
-        }
+        CheckMovementDirection();
 
         if (Input.GetKeyDown(KeyCode.Space) && checkGrounded())
             Jump();
@@ -44,6 +36,18 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
+    }
+
+    private void CheckMovementDirection()
+    {
+        if (facingRight == false && horizontalInput > 0)
+        {
+            Flip();
+        }
+        else if (facingRight == true && horizontalInput < 0)
+        {
+            Flip();
+        }
     }
     private void Jump()
     {

@@ -1,49 +1,7 @@
 fileFormatVersion: 2
-guid: d1c070b3909c48f449d850c642705e8f
+guid: cb42a22cdb71ba84081317bc1756ebad
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 8834383540189861523
-    second: Rock1_Run (38x34)_0
-  - first:
-      213: 6785170929712538781
-    second: Rock1_Run (38x34)_1
-  - first:
-      213: 3703273359453623547
-    second: Rock1_Run (38x34)_2
-  - first:
-      213: -9001522325175290534
-    second: Rock1_Run (38x34)_3
-  - first:
-      213: -8183051303927691493
-    second: Rock1_Run (38x34)_4
-  - first:
-      213: -4469872210289523224
-    second: Rock1_Run (38x34)_5
-  - first:
-      213: -222193624059845962
-    second: Rock1_Run (38x34)_6
-  - first:
-      213: -5459271319760108659
-    second: Rock1_Run (38x34)_7
-  - first:
-      213: -992810962057025348
-    second: Rock1_Run (38x34)_8
-  - first:
-      213: 6899715263542045585
-    second: Rock1_Run (38x34)_9
-  - first:
-      213: 2343870059448117283
-    second: Rock1_Run (38x34)_10
-  - first:
-      213: 1207629505254439147
-    second: Rock1_Run (38x34)_11
-  - first:
-      213: 8506174262497254486
-    second: Rock1_Run (38x34)_12
-  - first:
-      213: 8678585714487721111
-    second: Rock1_Run (38x34)_13
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -75,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -89,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,15 +62,15 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
-  cookieLightType: 1
+  applyGammaDecoding: 0
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -124,7 +82,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -136,7 +94,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -147,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rock1_Run (38x34)_0
+      name: HealthUI_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 38
-        height: 34
+        x: 1
+        y: 67
+        width: 9
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5b407a32da443d40a9b61fa1fbb7428
-      internalID: 8834383540189861523
+      spriteID: caf031fd28b7e7a438b371b8a0739371
+      internalID: -2018420757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rock1_Run (38x34)_1
+      name: HealthUI_1
       rect:
         serializedVersion: 2
-        x: 38
-        y: 0
-        width: 38
-        height: 34
+        x: 12
+        y: 67
+        width: 9
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cae75574f7e9ace4da00d6ac87c4b873
-      internalID: 6785170929712538781
+      spriteID: 9b51b7ba8673ab5498303d2a21f1b291
+      internalID: 1375801778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rock1_Run (38x34)_2
+      name: HealthUI_2
       rect:
         serializedVersion: 2
-        x: 76
-        y: 0
-        width: 38
-        height: 34
+        x: 23
+        y: 67
+        width: 9
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e71d151c8ef10746a4e3f737d2faa04
-      internalID: 3703273359453623547
+      spriteID: 260ee7d4f0c73da40acd60a901e6ea43
+      internalID: -1352452723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rock1_Run (38x34)_3
+      name: HealthUI_3
       rect:
         serializedVersion: 2
-        x: 114
-        y: 0
-        width: 38
-        height: 34
+        x: 1
+        y: 56
+        width: 9
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ad859fab8d86f64a8461801ce28dd8a
-      internalID: -9001522325175290534
+      spriteID: ed4b9471e58e06b4895c50e0ca8c2fc5
+      internalID: -148521844
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rock1_Run (38x34)_4
+      name: HealthUI_4
       rect:
         serializedVersion: 2
-        x: 152
-        y: 0
-        width: 38
-        height: 34
+        x: 12
+        y: 56
+        width: 9
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c8bf0d2bdd46674ab4b3ea89afd50ea
-      internalID: -8183051303927691493
+      spriteID: 77c311b5281e3d749b27a0a6e652ec57
+      internalID: -124664654
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rock1_Run (38x34)_5
+      name: HealthUI_5
       rect:
         serializedVersion: 2
-        x: 190
-        y: 0
-        width: 38
-        height: 34
+        x: 23
+        y: 56
+        width: 9
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89fca74691f68cc42a24fa06467fc152
-      internalID: -4469872210289523224
+      spriteID: e7fb166de4b8caa4bb9222cb10464879
+      internalID: 1873174422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rock1_Run (38x34)_6
+      name: HealthUI_6
       rect:
         serializedVersion: 2
-        x: 228
-        y: 0
-        width: 38
-        height: 34
+        x: 1
+        y: 45
+        width: 9
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,20 +245,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45512afca48c5a74b941764dbe2897d1
-      internalID: -222193624059845962
+      spriteID: b8ae610a7b3b5b84b9c7af6f30b72cc1
+      internalID: 858374372
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rock1_Run (38x34)_7
+      name: HealthUI_7
       rect:
         serializedVersion: 2
-        x: 266
-        y: 0
-        width: 38
-        height: 34
+        x: 12
+        y: 45
+        width: 9
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -308,20 +266,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2c3624a0ec0265409874cae74fc0967
-      internalID: -5459271319760108659
+      spriteID: 4ee4d3c344d23284b8fe81b7f06e0d07
+      internalID: -646025520
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rock1_Run (38x34)_8
+      name: HealthUI_8
       rect:
         serializedVersion: 2
-        x: 304
-        y: 0
-        width: 38
-        height: 34
+        x: 23
+        y: 45
+        width: 9
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -329,20 +287,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26ba11ca920af2049b1926bc82bdd10c
-      internalID: -992810962057025348
+      spriteID: b1dc97cf37d9ca0439e3ac856c7606be
+      internalID: -1563920347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rock1_Run (38x34)_9
+      name: HealthUI_9
       rect:
         serializedVersion: 2
-        x: 342
-        y: 0
-        width: 38
-        height: 34
+        x: 1
+        y: 34
+        width: 9
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -350,20 +308,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0e029eeb77dfc04aab0b953ec7ad546
-      internalID: 6899715263542045585
+      spriteID: 8abf95ff4cc1c114083f7937ebfc82ac
+      internalID: 534364690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rock1_Run (38x34)_10
+      name: HealthUI_10
       rect:
         serializedVersion: 2
-        x: 380
-        y: 0
-        width: 38
-        height: 34
+        x: 12
+        y: 34
+        width: 9
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -371,20 +329,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7538b3255cafcb44a22279e2879896b
-      internalID: 2343870059448117283
+      spriteID: c92b876320fbbd34bad3e83d27d0b8cb
+      internalID: 2080641131
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rock1_Run (38x34)_11
+      name: HealthUI_11
       rect:
         serializedVersion: 2
-        x: 418
-        y: 0
-        width: 38
-        height: 34
+        x: 23
+        y: 34
+        width: 9
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -392,20 +350,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f15438fa626fe8148b36a55be5a659c1
-      internalID: 1207629505254439147
+      spriteID: f248aa4041bc59a4e83c91393b68a2e4
+      internalID: -419412494
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rock1_Run (38x34)_12
+      name: HealthUI_12
       rect:
         serializedVersion: 2
-        x: 456
-        y: 0
-        width: 38
-        height: 34
+        x: 1
+        y: 23
+        width: 9
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -413,20 +371,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd3daa9992cc8694c8c46c71e44824cb
-      internalID: 8506174262497254486
+      spriteID: b3a59d8c1ee61ce4dbf96425f42bd7da
+      internalID: 1683159728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rock1_Run (38x34)_13
+      name: HealthUI_13
       rect:
         serializedVersion: 2
-        x: 494
-        y: 0
-        width: 38
-        height: 34
+        x: 12
+        y: 23
+        width: 9
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -434,8 +392,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b5da97c89d57d7429dd66af3255a739
-      internalID: 8678585714487721111
+      spriteID: ca88c5f46039c4540975675472f73328
+      internalID: -1049096355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthUI_14
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 23
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 673d82f87a7d064418f745f53e405cf0
+      internalID: -2061535401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthUI_15
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 12
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b0997aa116fb2c44a1ff16c35c1b9e6
+      internalID: 404885902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthUI_16
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 12
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 867e08523511a244aa7b3cadd2e9d1b7
+      internalID: 1763182684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthUI_17
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 12
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eb5e5f48e07d3e4fbac48f987dc7545
+      internalID: 154485139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthUI_18
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec5cc8586c7c81641a89a4ff9325f7a1
+      internalID: 428246692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthUI_19
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 1
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a36faf8d9dc2be4e8f7422466a749b3
+      internalID: 370646912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthUI_20
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 1
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e955a5ec2ea6ed43a6096252aa0a9a1
+      internalID: 25075872
       vertices: []
       indices: 
       edges: []
@@ -451,20 +556,27 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Rock1_Run (38x34)_12: 8506174262497254486
-      Rock1_Run (38x34)_0: 8834383540189861523
-      Rock1_Run (38x34)_9: 6899715263542045585
-      Rock1_Run (38x34)_10: 2343870059448117283
-      Rock1_Run (38x34)_13: 8678585714487721111
-      Rock1_Run (38x34)_5: -4469872210289523224
-      Rock1_Run (38x34)_8: -992810962057025348
-      Rock1_Run (38x34)_4: -8183051303927691493
-      Rock1_Run (38x34)_1: 6785170929712538781
-      Rock1_Run (38x34)_2: 3703273359453623547
-      Rock1_Run (38x34)_6: -222193624059845962
-      Rock1_Run (38x34)_7: -5459271319760108659
-      Rock1_Run (38x34)_3: -9001522325175290534
-      Rock1_Run (38x34)_11: 1207629505254439147
+      HealthUI_10: 2080641131
+      HealthUI_20: 25075872
+      HealthUI_8: -1563920347
+      HealthUI_4: -124664654
+      HealthUI_6: 858374372
+      HealthUI_0: -2018420757
+      HealthUI_15: 404885902
+      HealthUI_17: 154485139
+      HealthUI_1: 1375801778
+      HealthUI_3: -148521844
+      HealthUI_9: 534364690
+      HealthUI_14: -2061535401
+      HealthUI_7: -646025520
+      HealthUI_19: 370646912
+      HealthUI_11: -419412494
+      HealthUI_13: -1049096355
+      HealthUI_5: 1873174422
+      HealthUI_18: 428246692
+      HealthUI_2: -1352452723
+      HealthUI_16: 1763182684
+      HealthUI_12: 1683159728
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
