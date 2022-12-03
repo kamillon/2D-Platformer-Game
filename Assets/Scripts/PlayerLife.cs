@@ -7,6 +7,9 @@ public class PlayerLife : MonoBehaviour
 {
     private Animator anim;
     private Rigidbody2D rb;
+    private bool isDead;
+    public GameManagerScript gameManager;
+    public AudioSource bgSound;
 
     private void Start()
     {
@@ -32,9 +35,12 @@ public class PlayerLife : MonoBehaviour
         if (collision.gameObject.CompareTag("Trap"))
         {
             HealthManager.health--;
-            if(HealthManager.health <= 0)
+            if(HealthManager.health <= 0 && !isDead)
             {
+                bgSound.Stop();
+                isDead = true;
                 Die();
+                gameManager.gameOver();
             }
             else
             {
@@ -45,7 +51,13 @@ public class PlayerLife : MonoBehaviour
 
         if (collision.gameObject.CompareTag("KillZone"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            if (!isDead)
+            {
+                bgSound.Stop();
+                isDead = true;
+                gameManager.gameOver();
+            }
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
