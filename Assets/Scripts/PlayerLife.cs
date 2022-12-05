@@ -16,36 +16,11 @@ public class PlayerLife : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
-
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Trap"))
-    //    {
-    //        Die();
-    //    }
-
-    //    if (collision.gameObject.CompareTag("KillZone"))
-    //    {
-    //        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    //    }
-    //}
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Trap"))
         {
-            HealthManager.health--;
-            if(HealthManager.health <= 0 && !isDead)
-            {
-                bgSound.Stop();
-                isDead = true;
-                Die();
-                gameManager.gameOver();
-            }
-            else
-            {
-                StartCoroutine(GetHurt());
-            }
+            TrapCollision();
         }
 
 
@@ -61,6 +36,26 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Trap"))
+    //    {
+    //        TrapCollision();
+    //    }
+
+
+    //    if (collision.gameObject.CompareTag("KillZone"))
+    //    {
+    //        if (!isDead)
+    //        {
+    //            bgSound.Stop();
+    //            isDead = true;
+    //            gameManager.gameOver();
+    //        }
+    //        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    //    }
+    //}
+
     IEnumerator GetHurt()
     {
         Physics2D.IgnoreLayerCollision(13,14);
@@ -70,8 +65,27 @@ public class PlayerLife : MonoBehaviour
         Physics2D.IgnoreLayerCollision(13,14, false);
     }
 
+    public void TrapCollision()
+    {
+        if (!isDead)
+        {
+            HealthManager.health--;
+            if (HealthManager.health <= 0 && !isDead)
+            {
+                bgSound.Stop();
+                isDead = true;
+                Die();
+                gameManager.gameOver();
+            }
+            else
+            {
+                StartCoroutine(GetHurt());
+            }
+        }
+    }
 
-    private void Die()
+
+    public void Die()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<PlayerController>().enabled = false;

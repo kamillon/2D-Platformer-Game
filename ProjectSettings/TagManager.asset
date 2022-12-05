@@ -8,6 +8,8 @@ TagManager:
   - Banana
   - Trap
   - KillZone
+  - Enemy
+  - EnemyHeadCheck
   layers:
   - Default
   - TransparentFX
