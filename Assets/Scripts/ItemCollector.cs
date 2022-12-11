@@ -44,7 +44,7 @@ public class ItemCollector : MonoBehaviour
         if (collision.gameObject.CompareTag("Banana"))
         {
             Destroy(collision.gameObject);
-            AudioManager.PlaySound("Banana");
+            AudioManager.PlaySound("Pickup");
             bananas++;
             SaveHighScore();
         }

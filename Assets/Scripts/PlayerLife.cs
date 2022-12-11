@@ -34,6 +34,7 @@ public class PlayerLife : MonoBehaviour
                 {
                     bgSound.Stop();
                     isDead = true;
+                    AudioManager.PlaySound("GameOver");
                     gameManager.gameOver();
                 }
                 else
@@ -63,6 +64,7 @@ public class PlayerLife : MonoBehaviour
                 bgSound.Stop();
                 isDead = true;
                 Die();
+                AudioManager.PlaySound("GameOver");
                 gameManager.gameOver();
             }
             else

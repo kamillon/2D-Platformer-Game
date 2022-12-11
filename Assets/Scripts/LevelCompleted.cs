@@ -9,15 +9,13 @@ public class LevelCompleted : MonoBehaviour
     public AudioSource bgSound;
     private bool levelCompleted = false;
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player") && !levelCompleted){
             bgSound.Stop();
+            AudioManager.PlaySound("LevelUp");
             levelCompleted = true;
             levelCompletedScreen();
-            //Invoke("nextLevel", 2f);
-            //nextLevel();
         }
     }
 
@@ -26,9 +24,4 @@ public class LevelCompleted : MonoBehaviour
         go.SetActive(true);
 
     }
-
-    //public void nextLevel()
-    //{
-    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    //}
 }

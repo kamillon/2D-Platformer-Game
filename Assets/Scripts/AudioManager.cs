@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioClip Jump, Banana;
+    public AudioClip Jump, Pickup, GameOver, LevelUp;
 
-    public static AudioClip JumpSound, BananaSound;
+    public static AudioClip JumpSound, PickupSound, GameOverSound, LevelUpSound;
     static AudioSource audioSrc;
 
     void Start()
     {
         audioSrc = GetComponent<AudioSource>();
         JumpSound = Jump;
-        BananaSound = Banana;
+        PickupSound = Pickup;
+        GameOverSound = GameOver;
+        LevelUpSound = LevelUp;
     }
 
     public static void PlaySound(string soundClip)
@@ -23,8 +25,14 @@ public class AudioManager : MonoBehaviour
             case "Jump":
                 audioSrc.PlayOneShot(JumpSound, 1f);
                 break;
-            case "Banana":
-                audioSrc.PlayOneShot(BananaSound, 1f);
+            case "Pickup":
+                audioSrc.PlayOneShot(PickupSound, 1f);
+                break;
+            case "GameOver":
+                audioSrc.PlayOneShot(GameOverSound, 1f);
+                break;
+            case "LevelUp":
+                audioSrc.PlayOneShot(LevelUpSound, 1f);
                 break;
         }
     }
