@@ -35,6 +35,11 @@ public class GameManagerScript : MonoBehaviour
 
     public void restart()
     {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void tryAgain()
+    {
         SceneManager.LoadScene("Level1");
     }
 
@@ -43,9 +48,14 @@ public class GameManagerScript : MonoBehaviour
         Application.Quit();
     }
 
-    public void play()
+    public void nextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void backToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
 }

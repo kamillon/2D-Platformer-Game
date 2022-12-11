@@ -10,57 +10,45 @@ public class PlayerLife : MonoBehaviour
     private bool isDead;
     public GameManagerScript gameManager;
     public AudioSource bgSound;
+    public GameObject player;
+    public Transform respawnPoint;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Trap"))
+        if (other.gameObject.CompareTag("Trap"))
         {
             TrapCollision();
         }
 
-
-        if (collision.gameObject.CompareTag("KillZone"))
+        if (other.gameObject.CompareTag("KillZone"))
         {
             if (!isDead)
             {
-                bgSound.Stop();
-                isDead = true;
-                gameManager.gameOver();
+                HealthManager.health--;
+                if (HealthManager.health <= 0 && !isDead)
+                {
+                    bgSound.Stop();
+                    isDead = true;
+                    gameManager.gameOver();
+                }
+                else
+                {
+                    player.transform.position = respawnPoint.position;
+                }
             }
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
-
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Trap"))
-    //    {
-    //        TrapCollision();
-    //    }
-
-
-    //    if (collision.gameObject.CompareTag("KillZone"))
-    //    {
-    //        if (!isDead)
-    //        {
-    //            bgSound.Stop();
-    //            isDead = true;
-    //            gameManager.gameOver();
-    //        }
-    //        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    //    }
-    //}
 
     IEnumerator GetHurt()
     {
         Physics2D.IgnoreLayerCollision(13,14);
         GetComponent<Animator>().SetLayerWeight(1, 1);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         GetComponent<Animator>().SetLayerWeight(1, 0);
         Physics2D.IgnoreLayerCollision(13,14, false);
     }
@@ -84,16 +72,11 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
-
     public void Die()
     {
+        rb.velocity = Vector3.zero;
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<PlayerController>().enabled = false;
         anim.SetTrigger("death");  
-    }
-
-    private void RestartLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

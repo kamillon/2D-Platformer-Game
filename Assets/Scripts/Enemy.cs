@@ -57,12 +57,13 @@ public class Enemy : MonoBehaviour
 
     public void EnemyDeath()
     {
-        gameObject.GetComponent<Animator>().SetBool("isDeath", true);
-    }
-
-    public void EnemyDestry()
-    {
+        //gameObject.GetComponent<Animator>().SetBool("isDeath", true);
         Destroy(gameObject);
     }
+
+    //public void EnemyDestroy()
+    //{
+    //    Destroy(gameObject);
+    //}
 
 }

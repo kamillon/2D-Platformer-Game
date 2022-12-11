@@ -6,10 +6,12 @@ using TMPro;
 
 public class ItemCollector : MonoBehaviour
 {
-    private int bananas = 0;
+    public static int bananas = 0;
     private int highscore;
+    //[SerializeField]
+    //private Text bananasText;
     [SerializeField]
-    private Text bananasText;
+    private TextMeshProUGUI bananasText;
     [SerializeField]
     private TextMeshProUGUI HighScoreText;
     [SerializeField]
