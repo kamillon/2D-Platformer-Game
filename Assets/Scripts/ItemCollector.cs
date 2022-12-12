@@ -8,18 +8,10 @@ public class ItemCollector : MonoBehaviour
 {
     public int bananas = 0;
     [SerializeField]
-    private TextMeshProUGUI bananasText;
-    [SerializeField]
-    private TextMeshProUGUI scoreText;
-    [SerializeField]
-    private TextMeshProUGUI HighScoreText;
-    [SerializeField]
-    private TextMeshProUGUI YourScore;
-
+    private TextMeshProUGUI bananasText, scoreText, bananasGO, scoreGO, bananasLC, scoreLC;
     float previousPlayerX;
     public Transform player;
-    private float distance;
-
+    public float distance;
 
     void Awake()
     {
@@ -29,7 +21,6 @@ public class ItemCollector : MonoBehaviour
 
     private void Update()
     {
-
         if (previousPlayerX < player.position.x)
         {
             distance += (player.position.x - previousPlayerX) * 10;
@@ -37,11 +28,13 @@ public class ItemCollector : MonoBehaviour
         }
 
         scoreText.text = "Score: " + distance.ToString("0");
-        bananasText.text = "Bananas: " + bananas;
+        bananasText.text = bananas.ToString();
 
-        YourScore.text = "YOUR SCORE: " + distance.ToString("0");
-        HighScoreText.text = "Bananas: " + bananas;
-        HighScoreText.text = "BEST SCORE: " + PlayerPrefs.GetInt("highscore");
+        scoreGO.text = "SCORE: " + distance.ToString("0");
+        bananasGO.text = "x" + bananas.ToString();
+
+        scoreLC.text = "SCORE: " + distance.ToString("0");
+        bananasLC.text = "x" + bananas.ToString();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
