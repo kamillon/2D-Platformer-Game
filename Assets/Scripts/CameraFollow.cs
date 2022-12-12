@@ -5,22 +5,18 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     private Transform playerTarget;
-
     private Vector3 tempPos;
 
     [SerializeField]
     private float minX, maxX;
 
-    // Start is called before the first frame update
     void Start()
     {
         playerTarget = GameObject.FindWithTag("Player").transform;
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
-
         if (!playerTarget)
             return;
 
@@ -34,6 +30,5 @@ public class CameraFollow : MonoBehaviour
             tempPos.x = maxX;
 
         transform.position = tempPos;
-
     }
 }

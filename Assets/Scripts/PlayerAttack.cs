@@ -11,7 +11,6 @@ public class PlayerAttack : MonoBehaviour
     public float attackRate = 2f;
     float nextAttackTime = 0f;
 
-
     void Update()
     {
         if (Time.time >= nextAttackTime)
@@ -30,7 +29,14 @@ public class PlayerAttack : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy>().EnemyDeath();
+            if (enemy.GetComponent<Enemy>())
+            {
+                enemy.GetComponent<Enemy>().EnemyDeath();
+            }
+            else if (enemy.GetComponent<EnemyFollowPlayer>())
+            {
+                enemy.GetComponent<EnemyFollowPlayer>().EnemyDeath();
+            }
         }
     }
 

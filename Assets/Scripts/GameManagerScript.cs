@@ -7,27 +7,6 @@ public class GameManagerScript : MonoBehaviour
 {
     public GameObject go;
 
-    void Start()
-    {
-        //Cursor.visible = false;
-        //Cursor.lockState = CursorLockMode.Locked;
-    }
-
-
-    void Update()
-    {
-        //if (go.activeInHierarchy)
-        //{
-        //    Cursor.visible = true;
-        //    Cursor.lockState = CursorLockMode.None;
-        //}
-        //else
-        //{
-        //    Cursor.visible = false;
-        //    Cursor.lockState = CursorLockMode.Locked;
-        //}
-    }
-
     public void gameOver()
     {
         go.SetActive(true);
@@ -64,5 +43,4 @@ public class GameManagerScript : MonoBehaviour
     {
         SceneManager.LoadScene("Controls");
     }
-
 }

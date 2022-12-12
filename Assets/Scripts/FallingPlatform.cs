@@ -13,14 +13,6 @@ public class FallingPlatform : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Player"))
-    //    {
-    //        StartCoroutine(Fall());
-    //    }
-    //}
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -33,7 +25,6 @@ public class FallingPlatform : MonoBehaviour
     {
         yield return new WaitForSeconds(fallDelay);
         rb.bodyType = RigidbodyType2D.Dynamic;
-        //gameObject.SetActive(false);
         Destroy(transform.parent.gameObject, destroyDelay);
     }
 }

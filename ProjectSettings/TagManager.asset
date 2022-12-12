@@ -10,6 +10,7 @@ TagManager:
   - KillZone
   - Enemy
   - EnemyHeadCheck
+  - Bullet
   layers:
   - Default
   - TransparentFX
