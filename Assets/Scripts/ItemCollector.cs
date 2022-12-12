@@ -6,36 +6,41 @@ using TMPro;
 
 public class ItemCollector : MonoBehaviour
 {
-    public static int bananas = 0;
-    private int highscore;
-    //[SerializeField]
-    //private Text bananasText;
+    public int bananas = 0;
     [SerializeField]
     private TextMeshProUGUI bananasText;
+    [SerializeField]
+    private TextMeshProUGUI scoreText;
     [SerializeField]
     private TextMeshProUGUI HighScoreText;
     [SerializeField]
     private TextMeshProUGUI YourScore;
 
+    float previousPlayerX;
+    public Transform player;
+    private float distance;
 
-    private void Start()
+
+    void Awake()
     {
-        //PlayerPrefs.DeleteKey("highscore");
-
-        if (PlayerPrefs.HasKey("highscore"))
-        {
-            highscore = PlayerPrefs.GetInt("highscore");
-        }
-        else
-        {
-            highscore = 0;
-        }
+        previousPlayerX = player.position.x;
+        distance = 0;
     }
 
     private void Update()
     {
+
+        if (previousPlayerX < player.position.x)
+        {
+            distance += (player.position.x - previousPlayerX) * 10;
+            previousPlayerX = player.transform.position.x;
+        }
+
+        scoreText.text = "Score: " + distance.ToString("0");
         bananasText.text = "Bananas: " + bananas;
-        YourScore.text = "YOUR SCORE: " + bananas;
+
+        YourScore.text = "YOUR SCORE: " + distance.ToString("0");
+        HighScoreText.text = "Bananas: " + bananas;
         HighScoreText.text = "BEST SCORE: " + PlayerPrefs.GetInt("highscore");
     }
 
@@ -46,15 +51,6 @@ public class ItemCollector : MonoBehaviour
             Destroy(collision.gameObject);
             AudioManager.PlaySound("Pickup");
             bananas++;
-            SaveHighScore();
-        }
-    }
-
-    public void SaveHighScore()
-    {
-        if(bananas > PlayerPrefs.GetInt("highscore"))
-        {
-            PlayerPrefs.SetInt("highscore", bananas);
         }
     }
 }

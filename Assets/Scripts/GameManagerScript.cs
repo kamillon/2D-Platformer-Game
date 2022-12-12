@@ -31,6 +31,8 @@ public class GameManagerScript : MonoBehaviour
     public void gameOver()
     {
         go.SetActive(true);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<PlayerController>().enabled = false;
     }
 
     public void restart()
@@ -56,6 +58,11 @@ public class GameManagerScript : MonoBehaviour
     public void backToMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void controls()
+    {
+        SceneManager.LoadScene("Controls");
     }
 
 }

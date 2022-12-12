@@ -35,6 +35,9 @@ public class PlayerLife : MonoBehaviour
                     bgSound.Stop();
                     isDead = true;
                     AudioManager.PlaySound("GameOver");
+                    rb.velocity = Vector3.zero;
+                    GameObject player = GameObject.FindGameObjectWithTag("Player");
+                    player.GetComponent<PlayerController>().enabled = false;
                     gameManager.gameOver();
                 }
                 else
